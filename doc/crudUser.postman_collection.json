@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "c6e032f2-2a09-4b14-a236-c67beb442d67",
+		"name": "crudUser",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41541340"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"name\": \"Pablo\",\n   \"email\": \"prueba2@gmail.com\",\n   \"bio\": \"Probando 1 nuevo para filtrarlo\",\n   \"password\": \"11111111\",\n    \"birthDate\": \"1998/12/05\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_API_URL}}/users",
+					"host": [
+						"{{BASE_API_URL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Users Pass",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n   \"email\": \"prueba3@gmail.com\",\n   \"password\": \"123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_API_URL}}/users/:id",
+					"host": [
+						"{{BASE_API_URL}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "679bdca3fcf60472ada1ffce"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UsersWithoutPass",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n   \"email\": \"prueba4@gmail.com\",\n   \"bio\": \"Ahora sin la Passs actualizare todo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_API_URL}}/users/:id",
+					"host": [
+						"{{BASE_API_URL}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "679bdca3fcf60472ada1ffce"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Users Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"name\": \"Jose\",\n   \"email\": \"prueba2@gmail.com\",\n   \"bio\": \"Probando Probando\",\n   \"password\": \"12345678\",\n    \"birthDate\": \"2014/12/05\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_API_URL}}/users",
+					"host": [
+						"{{BASE_API_URL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Users Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"name\": \"Esther\",\n   \"email\": \"prueba@gmail.com\",\n   \"bio\": \"Probando Probando\",\n   \"password\": \"12345678\",\n    \"birthDate\": \"1988/12/05\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_API_URL}}/users",
+					"host": [
+						"{{BASE_API_URL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Users Copy 2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"name\": \"Esther\",\n   \"email\": \"prueba@gmail.com\",\n   \"bio\": \"Probando Probando\",\n   \"password\": \"12345678\",\n    \"birthDate\": \"1988/12/05\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_API_URL}}/users?olderThan=2000",
+					"host": [
+						"{{BASE_API_URL}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "olderThan",
+							"value": "2000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_API_URL",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		}
+	]
+}
